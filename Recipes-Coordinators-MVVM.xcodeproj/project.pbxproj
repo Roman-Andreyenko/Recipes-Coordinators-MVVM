@@ -70,8 +70,8 @@
 		3053C71B2178E0200041C485 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3053C7092178DF240041C485 /* AppDelegate.swift */,
-				3053C70B2178DF240041C485 /* ViewController.swift */,
+				3053C71E2178E88D0041C485 /* DataLayer */,
+				3053C71D2178E86B0041C485 /* PresentationLayer */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -85,6 +85,38 @@
 				3053C7152178DF240041C485 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3053C71D2178E86B0041C485 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				3053C71F2178E8EF0041C485 /* Core */,
+				3053C7092178DF240041C485 /* AppDelegate.swift */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		3053C71E2178E88D0041C485 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		3053C71F2178E8EF0041C485 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3053C7202178E9210041C485 /* ViewControllers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3053C7202178E9210041C485 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3053C70B2178DF240041C485 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		3062660B6192DCF23E575F42 /* Pods */ = {
