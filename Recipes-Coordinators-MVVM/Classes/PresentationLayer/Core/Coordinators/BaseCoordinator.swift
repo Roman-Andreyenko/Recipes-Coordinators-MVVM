@@ -52,4 +52,9 @@ class BaseCoordinator<ResultType>: Coordinator {
         return coordinator.start()
             .do(onNext: { [weak self] _ in self?.free(coordinator: coordinator) })
     }
+
+    func start() -> Observable<CoordinationResult> {
+        fatalError("Start method should be implemented.")
+    }
+
 }

@@ -12,10 +12,5 @@ extension UIViewController {
 
     static var storyboardIdentifier: String {
         return className
-    }
-
-    static func instantiate(from storyboard: AppStoryboard) -> Self {
-        return storyboard.instantiateViewController(of: self)
-    }
-    
+    }    
 }

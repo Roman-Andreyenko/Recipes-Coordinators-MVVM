@@ -23,11 +23,3 @@ protocol Coordinator {
     /// - Returns: Result of coordinator's work.
     func start() -> Observable<CoordinationResult>
 }
-
-extension Coordinator {
-
-    func start() -> Observable<CoordinationResult> {
-        fatalError("Start method should be implemented.")
-    }
-
-}
