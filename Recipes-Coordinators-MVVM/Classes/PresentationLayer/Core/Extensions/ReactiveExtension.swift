@@ -12,13 +12,26 @@ import RxSwift
 
 private var prepareForReuseBag: Int8 = 0
 
-@objc public protocol Reusable : class {
+@objc protocol Reusable : class {
     func prepareForReuse()
+    static var cellReuseIdentifier: String { get }
 }
 
-extension UITableViewCell: Reusable {}
-extension UITableViewHeaderFooterView: Reusable {}
-extension UICollectionReusableView: Reusable {}
+extension UITableViewCell: Reusable {
+    static var cellReuseIdentifier: String {
+        return className
+    }
+}
+extension UITableViewHeaderFooterView: Reusable {
+    static var cellReuseIdentifier: String {
+        return className
+    }
+}
+extension UICollectionReusableView: Reusable {
+    static var cellReuseIdentifier: String {
+        return className
+    }
+}
 
 extension Reactive where Base: Reusable {
     var prepareForReuse: Observable<Void> {
