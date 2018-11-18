@@ -3,17 +3,24 @@ PODS:
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxSwift (4.3.1)
+  - Swinject (2.5.0)
+  - SwinjectAutoregistration (2.5.0):
+    - Swinject (~> 2.5)
 
 DEPENDENCIES:
   - ReachabilitySwift (= 4.1.0)
   - RxCocoa (= 4.3.1)
   - RxSwift (= 4.3.1)
+  - Swinject (= 2.5.0)
+  - SwinjectAutoregistration (= 2.5.0)
 
 SPEC CHECKSUMS:
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  SwinjectAutoregistration: 0502a16e5f5baf181be80dc9510e0efa29130485
 
-PODFILE CHECKSUM: 8144df4dfca64be466131ac012ab970c7277a7df
+PODFILE CHECKSUM: 0d541e9d0d50038f811b35b599a5290a34e744e9
 
 COCOAPODS: 1.3.1
