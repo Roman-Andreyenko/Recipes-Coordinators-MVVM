@@ -16,6 +16,10 @@ struct TextUnderPictureCellViewModelOutput {
     let picture: Driver<UIImage?>
 }
 
+struct TextUnderPictureCellViewModelArgument {
+    let recipe: Recipe
+}
+
 protocol TextUnderPictureCellViewModel: CellViewModel {
 
     func transform(input: TextUnderPictureCellViewModelInput) -> TextUnderPictureCellViewModelOutput

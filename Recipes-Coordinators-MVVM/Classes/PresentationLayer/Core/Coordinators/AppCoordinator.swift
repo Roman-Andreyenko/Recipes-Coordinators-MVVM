@@ -8,17 +8,21 @@
 
 import UIKit
 import RxSwift
+import Swinject
 
 class AppCoordinator: BaseCoordinator<Void> {
 
-    private unowned let window: UIWindow
+    private let window: UIWindow
+    private let assembler: Assembler
 
-    init(window: UIWindow) {
-        self.window = window
+    override init() {
+        self.window = UIWindow()
+        self.assembler = Assembler([NetworkAssembly()])
+        super.init()
     }
 
     override func start() -> Observable<Void> {
-        let recipeListCoordinator = RecipeListCoordinator(window: window)
+        let recipeListCoordinator = RecipeListCoordinator(parentAssembler: assembler, window: window)
         return coordinate(to: recipeListCoordinator)
     }
 }

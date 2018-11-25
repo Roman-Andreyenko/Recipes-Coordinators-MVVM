@@ -8,12 +8,12 @@
 
 import RxCocoa
 
-final class VerticalTextAndDescriptionCellViewModelImp: VerticalTextAndDescriptionCellViewModel {
+final class DefaultVerticalTextAndDescriptionCellViewModel: VerticalTextAndDescriptionCellViewModel {
 
     private let recipe: Recipe
 
-    init(recipe: Recipe) {
-        self.recipe = recipe
+    init(argument: VerticalTextAndDescriptionCellViewModelArgument) {
+        self.recipe = argument.recipe
     }
 
     func transform(input: VerticalTextAndDescriptionCellViewModelInput) -> VerticalTextAndDescriptionCellViewModelOutput {
@@ -22,7 +22,7 @@ final class VerticalTextAndDescriptionCellViewModelImp: VerticalTextAndDescripti
     }
 }
 
-extension VerticalTextAndDescriptionCellViewModelImp: Identifiable {
+extension DefaultVerticalTextAndDescriptionCellViewModel: Identifiable {
     var identifier: String {
         return String(describing: type(of: VerticalTextAndDescriptionCellViewModel.self))
     }

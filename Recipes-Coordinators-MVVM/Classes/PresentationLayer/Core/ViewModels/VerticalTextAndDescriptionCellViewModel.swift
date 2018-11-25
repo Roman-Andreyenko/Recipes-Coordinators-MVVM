@@ -16,6 +16,10 @@ struct VerticalTextAndDescriptionCellViewModelOutput {
     let description: Driver<String?>
 }
 
+struct VerticalTextAndDescriptionCellViewModelArgument {
+    let recipe: Recipe
+}
+
 protocol VerticalTextAndDescriptionCellViewModel: CellViewModel {
     
     func transform(input: VerticalTextAndDescriptionCellViewModelInput) -> VerticalTextAndDescriptionCellViewModelOutput

@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import Swinject
 import RxSwift
 
 final class RecipeListCoordinator: BaseCoordinator<Void> {
 
     private unowned let window: UIWindow
+    private let assembler: Assembler
 
-    init(window: UIWindow) {
+    init(parentAssembler: Assembler, window: UIWindow) {
         self.window = window
+        self.assembler = Assembler(
+            [
+                RecipeListAssembly(),
+                TextUnderPictureCellViewModelAssembly(),
+                VerticalTextAndDescriptionCellViewModelAssembly()
+            ],
+            parent: parentAssembler)
     }
 
     override func start() -> Observable<Void> {
         
-        let viewController = RecipeListViewController.instantiate(from: .recipes, with: RecipeListViewModelImp())
+        let viewController = RecipeListViewController
+            .instantiate(from: .recipes,
+                         with: assembler.resolver.resolve(
+                            RecipeListViewModel.self,
+                             argument: RecipeListViewModelArgument(resolver: assembler.resolver)))
         let navigationController = UINavigationController(rootViewController: viewController)
 
         window.rootViewController = navigationController
