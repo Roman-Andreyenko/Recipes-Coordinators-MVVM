@@ -12,17 +12,15 @@ import Swinject
 
 class AppCoordinator: BaseCoordinator<Void> {
 
-    private let window: UIWindow
     private let assembler: Assembler
 
     override init() {
-        self.window = UIWindow()
-        self.assembler = Assembler([NetworkAssembly()])
+        self.assembler = Assembler([UIKitAssembly(), NetworkAssembly()])
         super.init()
     }
 
     override func start() -> Observable<Void> {
-        let recipeListCoordinator = RecipeListCoordinator(parentAssembler: assembler, window: window)
+        let recipeListCoordinator = RecipeListCoordinator(parentAssembler: assembler)
         return coordinate(to: recipeListCoordinator)
     }
 }

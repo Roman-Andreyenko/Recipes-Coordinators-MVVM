@@ -12,11 +12,9 @@ import RxSwift
 
 final class RecipeListCoordinator: BaseCoordinator<Void> {
 
-    private unowned let window: UIWindow
     private let assembler: Assembler
 
-    init(parentAssembler: Assembler, window: UIWindow) {
-        self.window = window
+    init(parentAssembler: Assembler) {
         self.assembler = Assembler(
             [
                 RecipeListAssembly(),
@@ -35,8 +33,9 @@ final class RecipeListCoordinator: BaseCoordinator<Void> {
                              argument: RecipeListViewModelArgument(resolver: assembler.resolver)))
         let navigationController = UINavigationController(rootViewController: viewController)
 
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        let rootWindow = assembler.resolver.resolve(UIWindow.self, name: DependencyNames.UIKit.rootWindow.rawValue)!
+        rootWindow.rootViewController = navigationController
+        rootWindow.makeKeyAndVisible()
 
         return Observable.never()
     }

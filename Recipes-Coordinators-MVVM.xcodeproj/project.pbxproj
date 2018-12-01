@@ -23,6 +23,7 @@
 		3053C737217913E10041C485 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053C736217913E10041C485 /* ViewModel.swift */; };
 		3053C73C217916AD0041C485 /* TextUnderPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053C73B217916AD0041C485 /* TextUnderPictureTableViewCell.swift */; };
 		3053C73E217916BB0041C485 /* TextUnderPictureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3053C73D217916BB0041C485 /* TextUnderPictureTableViewCell.xib */; };
+		306F811421B2D4BB0021558D /* UIKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306F811321B2D4BB0021558D /* UIKitAssembly.swift */; };
 		3084C077217A30220089F186 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084C076217A30220089F186 /* CellViewModel.swift */; };
 		3084C079217A32920089F186 /* DefaultRecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084C078217A32920089F186 /* DefaultRecipeListViewModel.swift */; };
 		3084C07E217A39A20089F186 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084C07D217A39A20089F186 /* Recipe.swift */; };
@@ -47,6 +48,7 @@
 		30BE8C33217A02670009D91B /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BE8C32217A02670009D91B /* Recipes.storyboard */; };
 		30BE8C35217A02A10009D91B /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C34217A02A10009D91B /* RecipeListViewController.swift */; };
 		30BE8C38217A041C0009D91B /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */; };
+		30D2231F21B2F3160003AE61 /* DependencyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2231E21B2F3160003AE61 /* DependencyNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,7 @@
 		3053C736217913E10041C485 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3053C73B217916AD0041C485 /* TextUnderPictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderPictureTableViewCell.swift; sourceTree = "<group>"; };
 		3053C73D217916BB0041C485 /* TextUnderPictureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextUnderPictureTableViewCell.xib; sourceTree = "<group>"; };
+		306F811321B2D4BB0021558D /* UIKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitAssembly.swift; sourceTree = "<group>"; };
 		3084C076217A30220089F186 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		3084C078217A32920089F186 /* DefaultRecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRecipeListViewModel.swift; sourceTree = "<group>"; };
 		3084C07D217A39A20089F186 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		30BE8C32217A02670009D91B /* Recipes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
 		30BE8C34217A02A10009D91B /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
+		30D2231E21B2F3160003AE61 /* DependencyNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyNames.swift; sourceTree = "<group>"; };
 		5FE38050BAE3F76EE9D554E8 /* Pods_Recipes_Coordinators_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipes_Coordinators_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		713D31EE7D410702E3DBA51E /* Pods-Recipes-Coordinators-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes-Coordinators-MVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recipes-Coordinators-MVVM/Pods-Recipes-Coordinators-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 		721001AB4CA74D8EE56B1EEA /* Pods-Recipes-Coordinators-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes-Coordinators-MVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Recipes-Coordinators-MVVM/Pods-Recipes-Coordinators-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				30A86CDC21AA9F24005193DD /* NetworkAssembly.swift */,
 				30A86CE121AAA6E0005193DD /* TextUnderPictureCellViewModelAssembly.swift */,
 				30A86CE321AAAD71005193DD /* VerticalTextAndDescriptionCellViewModelAssembly.swift */,
+				306F811321B2D4BB0021558D /* UIKitAssembly.swift */,
+				30D2231E21B2F3160003AE61 /* DependencyNames.swift */,
 			);
 			path = Assemblies;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 			files = (
 				3053C70C2178DF240041C485 /* BaseViewController.swift in Sources */,
 				30BE8C2A2179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift in Sources */,
+				306F811421B2D4BB0021558D /* UIKitAssembly.swift in Sources */,
 				30BE8C222179CDC40009D91B /* TextUnderPictureCellViewModel.swift in Sources */,
 				30BE8C282179F6DE0009D91B /* ReactiveExtension.swift in Sources */,
 				30A86CDD21AA9F24005193DD /* NetworkAssembly.swift in Sources */,
@@ -539,6 +546,7 @@
 				3053C73C217916AD0041C485 /* TextUnderPictureTableViewCell.swift in Sources */,
 				3053C7252178FDB90041C485 /* BaseCoordinator.swift in Sources */,
 				3084C089217A795F0089F186 /* UITableViewExtension.swift in Sources */,
+				30D2231F21B2F3160003AE61 /* DependencyNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
