@@ -7,6 +7,7 @@
 //
 
 import RxCocoa
+import RxSwift
 import Swinject
 
 final class DefaultRecipeListViewModel: RecipeListViewModel {
@@ -17,6 +18,7 @@ final class DefaultRecipeListViewModel: RecipeListViewModel {
                            Recipe(name: "recipe4", description: "cullest recipe4", pictureUrl: nil, steps: nil),
                            Recipe(name: "recipe5", description: "cullest recipe5", pictureUrl: nil, steps: nil)]
     private let resolver: Resolver
+    private let disposeBag = DisposeBag()
 
     init(argument: RecipeListViewModelArgument) {
         self.resolver = argument.resolver
@@ -26,12 +28,30 @@ final class DefaultRecipeListViewModel: RecipeListViewModel {
         var cellViewModels = [CellViewModel]()
         cellViewModels.reserveCapacity(recipes.count * 2)
         recipes.forEach {
-            cellViewModels.append(resolver
-                .resolve(TextUnderPictureCellViewModel.self,
-                         argument: TextUnderPictureCellViewModelArgument(recipe: $0))!)
-            cellViewModels.append(resolver
-                .resolve(VerticalTextAndDescriptionCellViewModel.self,
-                         argument: VerticalTextAndDescriptionCellViewModelArgument(recipe: $0))!)
+            let pictureRecipeItem = resolver.resolve(
+                TextUnderPictureCellViewModel.self,
+                argument: TextUnderPictureCellViewModelArgument(
+                    recipeEvent: Driver.of($0),
+                    isSelected: false
+                )
+            )!
+            pictureRecipeItem
+                .isSelectedRelay
+                .asDriver()
+                .skip(1)
+                .drive(onNext: { isSelected in
+                    print("item: \(isSelected)")
+                })
+                .disposed(by: disposeBag)
+            cellViewModels.append(pictureRecipeItem)
+            cellViewModels.append(
+                resolver.resolve(
+                    VerticalTextAndDescriptionCellViewModel.self,
+                    argument: VerticalTextAndDescriptionCellViewModelArgument(
+                        recipeEvent: Driver.of($0)
+                    )
+                )!
+            )
         }
         let recipesModels = Driver.of(cellViewModels)
         let selectedRecipe = input.selectRecipeTrigger.withLatestFrom(recipesModels) { index, recipes in

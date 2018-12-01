@@ -8,11 +8,16 @@
 
 import Swinject
 import SwinjectAutoregistration
+import RxCocoa
+
+struct VerticalTextAndDescriptionCellViewModelArgument {
+    let recipeEvent: Driver<Recipe>
+}
 
 struct VerticalTextAndDescriptionCellViewModelAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(VerticalTextAndDescriptionCellViewModel.self,
                                argument: VerticalTextAndDescriptionCellViewModelArgument.self,
-                               initializer: DefaultVerticalTextAndDescriptionCellViewModel.init)
+                               initializer: RecipeVerticalTextAndDescriptionCellViewModel.init)
     }
 }

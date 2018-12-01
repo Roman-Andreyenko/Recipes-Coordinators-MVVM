@@ -7,20 +7,20 @@
 //
 
 import RxCocoa
+import RxSwift
 
 struct TextUnderPictureCellViewModelInput {
+    let checkTrigger: Driver<Bool>
 }
 
 struct TextUnderPictureCellViewModelOutput {
     let text: Driver<String?>
     let picture: Driver<UIImage?>
-}
-
-struct TextUnderPictureCellViewModelArgument {
-    let recipe: Recipe
+    let checkedEvent: Driver<Bool>
 }
 
 protocol TextUnderPictureCellViewModel: CellViewModel {
 
+    var isSelectedRelay: BehaviorRelay<Bool> { get }
     func transform(input: TextUnderPictureCellViewModelInput) -> TextUnderPictureCellViewModelOutput
 }

@@ -8,11 +8,17 @@
 
 import Swinject
 import SwinjectAutoregistration
+import RxCocoa
+
+struct TextUnderPictureCellViewModelArgument {
+    let recipeEvent: Driver<Recipe>
+    let isSelected: Bool
+}
 
 struct TextUnderPictureCellViewModelAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(TextUnderPictureCellViewModel.self,
                                argument: TextUnderPictureCellViewModelArgument.self,
-                               initializer: DefaultTextUnderPictureCellViewModel.init)
+                               initializer: RecipeTextUnderPictureCellViewModel.init)
     }
 }

@@ -37,13 +37,13 @@
 		30A86CE421AAAD71005193DD /* VerticalTextAndDescriptionCellViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A86CE321AAAD71005193DD /* VerticalTextAndDescriptionCellViewModelAssembly.swift */; };
 		30BE8C202179CC7A0009D91B /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C1F2179CC7A0009D91B /* Identifiable.swift */; };
 		30BE8C222179CDC40009D91B /* TextUnderPictureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C212179CDC40009D91B /* TextUnderPictureCellViewModel.swift */; };
-		30BE8C242179EA900009D91B /* DefaultTextUnderPictureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C232179EA900009D91B /* DefaultTextUnderPictureCellViewModel.swift */; };
+		30BE8C242179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C232179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift */; };
 		30BE8C262179EEB70009D91B /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C252179EEB70009D91B /* CellConfigurable.swift */; };
 		30BE8C282179F6DE0009D91B /* ReactiveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C272179F6DE0009D91B /* ReactiveExtension.swift */; };
 		30BE8C2A2179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C292179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift */; };
 		30BE8C2C2179FC7D0009D91B /* VerticalTextAndDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BE8C2B2179FC7D0009D91B /* VerticalTextAndDescriptionTableViewCell.xib */; };
 		30BE8C2E2179FFAA0009D91B /* VerticalTextAndDescriptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C2D2179FFAA0009D91B /* VerticalTextAndDescriptionCellViewModel.swift */; };
-		30BE8C30217A000F0009D91B /* DefaultVerticalTextAndDescriptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C2F217A000F0009D91B /* DefaultVerticalTextAndDescriptionCellViewModel.swift */; };
+		30BE8C30217A000F0009D91B /* RecipeVerticalTextAndDescriptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C2F217A000F0009D91B /* RecipeVerticalTextAndDescriptionCellViewModel.swift */; };
 		30BE8C33217A02670009D91B /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BE8C32217A02670009D91B /* Recipes.storyboard */; };
 		30BE8C35217A02A10009D91B /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C34217A02A10009D91B /* RecipeListViewController.swift */; };
 		30BE8C38217A041C0009D91B /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */; };
@@ -81,13 +81,13 @@
 		30A86CE321AAAD71005193DD /* VerticalTextAndDescriptionCellViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAndDescriptionCellViewModelAssembly.swift; sourceTree = "<group>"; };
 		30BE8C1F2179CC7A0009D91B /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		30BE8C212179CDC40009D91B /* TextUnderPictureCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderPictureCellViewModel.swift; sourceTree = "<group>"; };
-		30BE8C232179EA900009D91B /* DefaultTextUnderPictureCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextUnderPictureCellViewModel.swift; sourceTree = "<group>"; };
+		30BE8C232179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTextUnderPictureCellViewModel.swift; sourceTree = "<group>"; };
 		30BE8C252179EEB70009D91B /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		30BE8C272179F6DE0009D91B /* ReactiveExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveExtension.swift; sourceTree = "<group>"; };
 		30BE8C292179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAndDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		30BE8C2B2179FC7D0009D91B /* VerticalTextAndDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalTextAndDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		30BE8C2D2179FFAA0009D91B /* VerticalTextAndDescriptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAndDescriptionCellViewModel.swift; sourceTree = "<group>"; };
-		30BE8C2F217A000F0009D91B /* DefaultVerticalTextAndDescriptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVerticalTextAndDescriptionCellViewModel.swift; sourceTree = "<group>"; };
+		30BE8C2F217A000F0009D91B /* RecipeVerticalTextAndDescriptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVerticalTextAndDescriptionCellViewModel.swift; sourceTree = "<group>"; };
 		30BE8C32217A02670009D91B /* Recipes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
 		30BE8C34217A02A10009D91B /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
@@ -256,9 +256,7 @@
 				3053C736217913E10041C485 /* ViewModel.swift */,
 				30BE8C1F2179CC7A0009D91B /* Identifiable.swift */,
 				30BE8C212179CDC40009D91B /* TextUnderPictureCellViewModel.swift */,
-				30BE8C232179EA900009D91B /* DefaultTextUnderPictureCellViewModel.swift */,
 				30BE8C2D2179FFAA0009D91B /* VerticalTextAndDescriptionCellViewModel.swift */,
-				30BE8C2F217A000F0009D91B /* DefaultVerticalTextAndDescriptionCellViewModel.swift */,
 				3084C076217A30220089F186 /* CellViewModel.swift */,
 				3084C084217A62A00089F186 /* ViewModelInitializable.swift */,
 			);
@@ -352,6 +350,8 @@
 		30BE8C36217A03A10009D91B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				30BE8C232179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift */,
+				30BE8C2F217A000F0009D91B /* RecipeVerticalTextAndDescriptionCellViewModel.swift */,
 				30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */,
 				3084C078217A32920089F186 /* DefaultRecipeListViewModel.swift */,
 			);
@@ -517,7 +517,7 @@
 				3084C087217A75330089F186 /* AppCoordinator.swift in Sources */,
 				3053C72D21790AC80041C485 /* StringExtension.swift in Sources */,
 				3084C080217A3D5E0089F186 /* RecipeStep.swift in Sources */,
-				30BE8C242179EA900009D91B /* DefaultTextUnderPictureCellViewModel.swift in Sources */,
+				30BE8C242179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift in Sources */,
 				3053C73221790ECC0041C485 /* UIViewControllerExtension.swift in Sources */,
 				3084C085217A62A00089F186 /* ViewModelInitializable.swift in Sources */,
 				30BE8C38217A041C0009D91B /* RecipeListViewModel.swift in Sources */,
@@ -530,7 +530,7 @@
 				30BE8C202179CC7A0009D91B /* Identifiable.swift in Sources */,
 				30BE8C2E2179FFAA0009D91B /* VerticalTextAndDescriptionCellViewModel.swift in Sources */,
 				3044C6E121A1A76A00795B44 /* DefaultNetworkReachabilityService.swift in Sources */,
-				30BE8C30217A000F0009D91B /* DefaultVerticalTextAndDescriptionCellViewModel.swift in Sources */,
+				30BE8C30217A000F0009D91B /* RecipeVerticalTextAndDescriptionCellViewModel.swift in Sources */,
 				3053C70A2178DF240041C485 /* AppDelegate.swift in Sources */,
 				3053C7232178F9550041C485 /* Coordinator.swift in Sources */,
 				30BE8C262179EEB70009D91B /* CellConfigurable.swift in Sources */,

@@ -30,9 +30,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjQ-AZ-ScO">
+                        <rect key="frame" x="151" y="10" width="24" height="24"/>
+                        <state key="normal" image="CheckIcon"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Jlv-3Z-Zsi" firstAttribute="centerX" secondItem="DsP-N4-zCV" secondAttribute="centerX" id="6ba-Z2-K2i"/>
+                    <constraint firstItem="fjQ-AZ-ScO" firstAttribute="top" secondItem="DsP-N4-zCV" secondAttribute="top" constant="10" id="H2u-AS-VXX"/>
+                    <constraint firstAttribute="trailing" secondItem="fjQ-AZ-ScO" secondAttribute="trailing" constant="10" id="LdN-Gw-jxV"/>
                     <constraint firstAttribute="bottom" secondItem="Jlv-3Z-Zsi" secondAttribute="bottom" constant="16" id="Mrg-wZ-ogK"/>
                     <constraint firstItem="aLJ-Et-mRc" firstAttribute="leading" secondItem="Jlv-3Z-Zsi" secondAttribute="leading" constant="16" id="PUh-F6-5jD"/>
                     <constraint firstItem="aLJ-Et-mRc" firstAttribute="top" secondItem="Jlv-3Z-Zsi" secondAttribute="top" constant="16" id="lYx-5e-vby"/>
@@ -41,10 +47,14 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkerView" destination="fjQ-AZ-ScO" id="Bzd-6q-Vlh"/>
                 <outlet property="pictureView" destination="Jlv-3Z-Zsi" id="sQJ-o6-Dba"/>
                 <outlet property="textView" destination="aLJ-Et-mRc" id="e6g-dI-QAQ"/>
             </connections>
             <point key="canvasLocation" x="-220.5" y="-90"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="CheckIcon" width="24" height="24"/>
+    </resources>
 </document>
