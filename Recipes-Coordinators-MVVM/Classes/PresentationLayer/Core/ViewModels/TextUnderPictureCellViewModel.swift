@@ -10,17 +10,18 @@ import RxCocoa
 import RxSwift
 
 struct TextUnderPictureCellViewModelInput {
-    let checkTrigger: Driver<Bool>
+    let isCheckerSelected: Driver<Bool>
 }
 
 struct TextUnderPictureCellViewModelOutput {
     let text: Driver<String?>
     let picture: Driver<UIImage?>
-    let checkedEvent: Driver<Bool>
+    let isCheckerSelected: Driver<Bool>
+    let isCheckerHidden: Driver<Bool>
 }
 
 protocol TextUnderPictureCellViewModel: CellViewModel {
 
-    var isSelectedRelay: BehaviorRelay<Bool> { get }
+    var isCheckerSelected: BehaviorRelay<Bool> { get }
     func transform(input: TextUnderPictureCellViewModelInput) -> TextUnderPictureCellViewModelOutput
 }

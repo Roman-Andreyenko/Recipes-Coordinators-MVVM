@@ -20,12 +20,12 @@ class TextUnderPictureTableViewCell: UITableViewCell {
 extension TextUnderPictureTableViewCell: CellConfigurable {
 
     func configure(with viewModel: TextUnderPictureCellViewModel) {
-        let checkTrigger = checkerView.rx.tap.asDriver().map { [weak self] in
+        let isCheckerSelected = checkerView.rx.tap.asDriver().map { [weak self] in
             return self?.checkerView.isSelected ?? false
         }
-        let input = TextUnderPictureCellViewModelInput(checkTrigger: checkTrigger)
+        let input = TextUnderPictureCellViewModelInput(isCheckerSelected: isCheckerSelected)
         let output = viewModel.transform(input: input)
-        let checkedEvent = output.checkedEvent.map { [weak self] isSelected -> Bool in
+        let checkedEvent = output.isCheckerSelected.map { [weak self] isSelected -> Bool in
             self?.checkerView.tintColor = isSelected ? .green : .gray
             return isSelected
         }

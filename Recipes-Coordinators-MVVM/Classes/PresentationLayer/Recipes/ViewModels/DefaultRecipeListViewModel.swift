@@ -30,13 +30,14 @@ final class DefaultRecipeListViewModel: RecipeListViewModel {
         recipes.forEach {
             let pictureRecipeItem = resolver.resolve(
                 TextUnderPictureCellViewModel.self,
-                argument: TextUnderPictureCellViewModelArgument(
-                    recipeEvent: Driver.of($0),
-                    isSelected: false
+                argument: RecipeTextUnderPictureCellViewModelArgument(
+                    recipe: Driver.of($0),
+                    isCheckerSelected: false,
+                    isCheckerHidden: false
                 )
             )!
             pictureRecipeItem
-                .isSelectedRelay
+                .isCheckerSelected
                 .asDriver()
                 .skip(1)
                 .drive(onNext: { isSelected in

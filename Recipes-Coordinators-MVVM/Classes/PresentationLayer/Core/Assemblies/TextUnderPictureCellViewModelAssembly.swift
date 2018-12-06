@@ -10,15 +10,16 @@ import Swinject
 import SwinjectAutoregistration
 import RxCocoa
 
-struct TextUnderPictureCellViewModelArgument {
-    let recipeEvent: Driver<Recipe>
-    let isSelected: Bool
+struct RecipeTextUnderPictureCellViewModelArgument {
+    let recipe: Driver<Recipe>
+    let isCheckerSelected: Bool
+    let isCheckerHidden: Bool
 }
 
 struct TextUnderPictureCellViewModelAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(TextUnderPictureCellViewModel.self,
-                               argument: TextUnderPictureCellViewModelArgument.self,
+                               argument: RecipeTextUnderPictureCellViewModelArgument.self,
                                initializer: RecipeTextUnderPictureCellViewModel.init)
     }
 }
