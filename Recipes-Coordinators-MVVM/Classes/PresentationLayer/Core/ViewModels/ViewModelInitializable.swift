@@ -16,8 +16,6 @@ protocol ViewModelInitializable {
 extension ViewModelInitializable where Self: UIViewController {
 
     static func instantiate(from storyboard: AppStoryboard, with viewModel: ViewModelType) -> Self {
-        var viewController = storyboard.instantiateViewController(of: self, with: viewModel)
-        viewController.viewModel = viewModel
-        return viewController
+        return storyboard.instantiateViewController(of: self, with: viewModel)
     }
 }

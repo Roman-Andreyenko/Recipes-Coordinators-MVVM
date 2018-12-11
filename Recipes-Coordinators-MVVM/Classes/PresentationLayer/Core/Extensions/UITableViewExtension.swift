@@ -19,7 +19,7 @@ extension UITableView {
     private typealias CellFactory = (UITableView, IndexPath, CellViewModel) -> UITableViewCell
 
     func bind(viewModel: CellViewModel, at indexPath: IndexPath) -> UITableViewCell {
-        return cellTypeMap[viewModel.identifier]?(self, indexPath, viewModel) ?? UITableViewCell()
+        return cellTypeMap[type(of: viewModel).identifier]?(self, indexPath, viewModel) ?? UITableViewCell()
     }
 
     func registerConfigurable<VMC: ConcreteCellConfigurable>(cellType: VMC.Type) {

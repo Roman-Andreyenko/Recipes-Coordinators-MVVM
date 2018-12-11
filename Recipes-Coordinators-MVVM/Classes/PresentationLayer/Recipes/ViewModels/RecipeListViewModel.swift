@@ -18,10 +18,6 @@ struct RecipeListViewModelOutput {
     let recipes: Driver<[CellViewModel]>
 }
 
-struct RecipeListViewModelArgument {
-    let resolver: Resolver
-}
-
 protocol RecipeListViewModel: ViewModel {
 
     func transform(input: RecipeListViewModelInput) -> RecipeListViewModelOutput

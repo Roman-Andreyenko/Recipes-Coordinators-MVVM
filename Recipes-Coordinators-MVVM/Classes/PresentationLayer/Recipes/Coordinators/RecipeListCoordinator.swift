@@ -30,7 +30,7 @@ final class RecipeListCoordinator: BaseCoordinator<Void> {
             .instantiate(from: .recipes,
                          with: assembler.resolver.resolve(
                             RecipeListViewModel.self,
-                             argument: RecipeListViewModelArgument(resolver: assembler.resolver)))
+                             argument: DefaultRecipeListViewModelArgument(resolver: assembler.resolver)))
         let navigationController = UINavigationController(rootViewController: viewController)
 
         let rootWindow = assembler.resolver.resolve(UIWindow.self, name: DependencyNames.UIKit.rootWindow.rawValue)!

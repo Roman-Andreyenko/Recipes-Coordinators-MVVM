@@ -10,7 +10,6 @@ import UIKit
 
 enum AppStoryboard: String {
 
-    case main
     case recipes
 
     private var instance: UIStoryboard {

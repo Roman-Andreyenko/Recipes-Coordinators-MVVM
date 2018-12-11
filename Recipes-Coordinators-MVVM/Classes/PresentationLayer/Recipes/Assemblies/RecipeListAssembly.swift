@@ -9,10 +9,14 @@
 import Swinject
 import SwinjectAutoregistration
 
+struct DefaultRecipeListViewModelArgument {
+    let resolver: Resolver
+}
+
 struct RecipeListAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(RecipeListViewModel.self,
-                               argument: RecipeListViewModelArgument.self,
+                               argument: DefaultRecipeListViewModelArgument.self,
                                initializer: DefaultRecipeListViewModel.init)
     }
 }

@@ -11,7 +11,6 @@
 		3044C6DF21A1A56100795B44 /* NetworkReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044C6DE21A1A56100795B44 /* NetworkReachabilityService.swift */; };
 		3044C6E121A1A76A00795B44 /* DefaultNetworkReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044C6E021A1A76A00795B44 /* DefaultNetworkReachabilityService.swift */; };
 		3053C70A2178DF240041C485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053C7092178DF240041C485 /* AppDelegate.swift */; };
-		3053C70C2178DF240041C485 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053C70B2178DF240041C485 /* BaseViewController.swift */; };
 		3053C7112178DF240041C485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3053C7102178DF240041C485 /* Assets.xcassets */; };
 		3053C7142178DF240041C485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3053C7122178DF240041C485 /* LaunchScreen.storyboard */; };
 		3053C7232178F9550041C485 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3053C7222178F9550041C485 /* Coordinator.swift */; };
@@ -48,6 +47,8 @@
 		30BE8C33217A02670009D91B /* Recipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BE8C32217A02670009D91B /* Recipes.storyboard */; };
 		30BE8C35217A02A10009D91B /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C34217A02A10009D91B /* RecipeListViewController.swift */; };
 		30BE8C38217A041C0009D91B /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */; };
+		30C8D50321B9ABB800FC3361 /* RecipeListOfStepsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8D50221B9ABB800FC3361 /* RecipeListOfStepsListViewController.swift */; };
+		30C8D50721B9ADF800FC3361 /* RecipeListOfStepsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C8D50621B9ADF800FC3361 /* RecipeListOfStepsListViewModel.swift */; };
 		30D2231F21B2F3160003AE61 /* DependencyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2231E21B2F3160003AE61 /* DependencyNames.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +57,6 @@
 		3044C6E021A1A76A00795B44 /* DefaultNetworkReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkReachabilityService.swift; sourceTree = "<group>"; };
 		3053C7062178DF240041C485 /* Recipes-Coordinators-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipes-Coordinators-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3053C7092178DF240041C485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3053C70B2178DF240041C485 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3053C7102178DF240041C485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3053C7132178DF240041C485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3053C7152178DF240041C485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +94,8 @@
 		30BE8C32217A02670009D91B /* Recipes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipes.storyboard; sourceTree = "<group>"; };
 		30BE8C34217A02A10009D91B /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
 		30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
+		30C8D50221B9ABB800FC3361 /* RecipeListOfStepsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListOfStepsListViewController.swift; sourceTree = "<group>"; };
+		30C8D50621B9ADF800FC3361 /* RecipeListOfStepsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListOfStepsListViewModel.swift; sourceTree = "<group>"; };
 		30D2231E21B2F3160003AE61 /* DependencyNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyNames.swift; sourceTree = "<group>"; };
 		5FE38050BAE3F76EE9D554E8 /* Pods_Recipes_Coordinators_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipes_Coordinators_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		713D31EE7D410702E3DBA51E /* Pods-Recipes-Coordinators-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes-Coordinators-MVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-Recipes-Coordinators-MVVM/Pods-Recipes-Coordinators-MVVM.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,7 +212,6 @@
 		3053C7202178E9210041C485 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3053C70B2178DF240041C485 /* BaseViewController.swift */,
 				3053C72A21790A280041C485 /* AppStoryboard.swift */,
 			);
 			path = ViewControllers;
@@ -349,6 +350,7 @@
 			children = (
 				30BE8C32217A02670009D91B /* Recipes.storyboard */,
 				30BE8C34217A02A10009D91B /* RecipeListViewController.swift */,
+				30C8D50221B9ABB800FC3361 /* RecipeListOfStepsListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -360,6 +362,7 @@
 				30BE8C2F217A000F0009D91B /* RecipeVerticalTextAndDescriptionCellViewModel.swift */,
 				30BE8C37217A041C0009D91B /* RecipeListViewModel.swift */,
 				3084C078217A32920089F186 /* DefaultRecipeListViewModel.swift */,
+				30C8D50621B9ADF800FC3361 /* RecipeListOfStepsListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -511,7 +514,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3053C70C2178DF240041C485 /* BaseViewController.swift in Sources */,
 				30BE8C2A2179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift in Sources */,
 				306F811421B2D4BB0021558D /* UIKitAssembly.swift in Sources */,
 				30BE8C222179CDC40009D91B /* TextUnderPictureCellViewModel.swift in Sources */,
@@ -531,6 +533,7 @@
 				3084C07E217A39A20089F186 /* Recipe.swift in Sources */,
 				30BE8C35217A02A10009D91B /* RecipeListViewController.swift in Sources */,
 				3044C6DF21A1A56100795B44 /* NetworkReachabilityService.swift in Sources */,
+				30C8D50721B9ADF800FC3361 /* RecipeListOfStepsListViewModel.swift in Sources */,
 				3084C077217A30220089F186 /* CellViewModel.swift in Sources */,
 				3084C083217A52140089F186 /* RecipeListCoordinator.swift in Sources */,
 				3053C729217903A90041C485 /* NSObjectExtension.swift in Sources */,
@@ -546,6 +549,7 @@
 				3053C73C217916AD0041C485 /* TextUnderPictureTableViewCell.swift in Sources */,
 				3053C7252178FDB90041C485 /* BaseCoordinator.swift in Sources */,
 				3084C089217A795F0089F186 /* UITableViewExtension.swift in Sources */,
+				30C8D50321B9ABB800FC3361 /* RecipeListOfStepsListViewController.swift in Sources */,
 				30D2231F21B2F3160003AE61 /* DependencyNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

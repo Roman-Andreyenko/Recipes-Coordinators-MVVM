@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Identifiable {
-    var identifier: String { get }
+    static var identifier: String { get }
 }

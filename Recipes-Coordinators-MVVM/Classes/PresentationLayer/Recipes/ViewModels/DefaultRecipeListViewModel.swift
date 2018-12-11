@@ -20,7 +20,7 @@ final class DefaultRecipeListViewModel: RecipeListViewModel {
     private let resolver: Resolver
     private let disposeBag = DisposeBag()
 
-    init(argument: RecipeListViewModelArgument) {
+    init(argument: DefaultRecipeListViewModelArgument) {
         self.resolver = argument.resolver
     }
 
