@@ -25,7 +25,7 @@ final class DefaultRecipeListViewModel: RecipeListViewModel {
     }
 
     func transform(input: RecipeListViewModelInput) -> RecipeListViewModelOutput {
-        var cellViewModels = [CellViewModel]()
+        var cellViewModels = [IdentifiableViewModel]()
         cellViewModels.reserveCapacity(recipes.count * 2)
         recipes.forEach {
             let pictureRecipeItem = resolver.resolve(

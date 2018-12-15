@@ -6,7 +6,7 @@
 //  Copyright © 2018 Roman Andreyenko. All rights reserved.
 //
 
-import Foundation
+typealias IdentifiableViewModel = ViewModel & Identifiable
 
 protocol ViewModel: class {
 }

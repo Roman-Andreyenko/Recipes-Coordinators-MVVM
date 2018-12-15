@@ -14,8 +14,8 @@ struct RecipeListViewModelInput {
 }
 
 struct RecipeListViewModelOutput {
-    let selectedRecipe: Driver<CellViewModel>
-    let recipes: Driver<[CellViewModel]>
+    let selectedRecipe: Driver<IdentifiableViewModel>
+    let recipes: Driver<[IdentifiableViewModel]>
 }
 
 protocol RecipeListViewModel: ViewModel {

@@ -35,9 +35,3 @@ final class RecipeTextUnderPictureCellViewModel: TextUnderPictureCellViewModel {
         )
     }
 }
-
-extension RecipeTextUnderPictureCellViewModel: Identifiable {
-    static var identifier: String {
-        return String(describing: type(of: TextUnderPictureCellViewModel.self))
-    }
-}

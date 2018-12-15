@@ -16,7 +16,13 @@ struct VerticalTextAndDescriptionCellViewModelOutput {
     let description: Driver<String?>
 }
 
-protocol VerticalTextAndDescriptionCellViewModel: CellViewModel {
+protocol VerticalTextAndDescriptionCellViewModel: ViewModel, Identifiable {
     
     func transform(input: VerticalTextAndDescriptionCellViewModelInput) -> VerticalTextAndDescriptionCellViewModelOutput
+}
+
+extension VerticalTextAndDescriptionCellViewModel {
+    static var identifier: String {
+        return String(describing: type(of: VerticalTextAndDescriptionCellViewModel.self))
+    }
 }

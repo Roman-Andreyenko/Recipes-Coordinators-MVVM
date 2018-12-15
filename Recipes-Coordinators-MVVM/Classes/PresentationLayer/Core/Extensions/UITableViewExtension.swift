@@ -16,9 +16,9 @@ struct AssociatedKeys {
 extension UITableView {
 
     typealias ConcreteCellConfigurable = UITableViewCell & CellConfigurable
-    private typealias CellFactory = (UITableView, IndexPath, CellViewModel) -> UITableViewCell
+    private typealias CellFactory = (UITableView, IndexPath, IdentifiableViewModel) -> UITableViewCell
 
-    func bindCell(with viewModel: CellViewModel, at indexPath: IndexPath) -> UITableViewCell {
+    func bindCell(with viewModel: IdentifiableViewModel, at indexPath: IndexPath) -> UITableViewCell {
         return cellTypeMap[type(of: viewModel).identifier]?(self, indexPath, viewModel) ?? UITableViewCell()
     }
 

@@ -25,9 +25,3 @@ final class RecipeVerticalTextAndDescriptionCellViewModel: VerticalTextAndDescri
         )
     }
 }
-
-extension RecipeVerticalTextAndDescriptionCellViewModel: Identifiable {
-    static var identifier: String {
-        return String(describing: type(of: VerticalTextAndDescriptionCellViewModel.self))
-    }
-}

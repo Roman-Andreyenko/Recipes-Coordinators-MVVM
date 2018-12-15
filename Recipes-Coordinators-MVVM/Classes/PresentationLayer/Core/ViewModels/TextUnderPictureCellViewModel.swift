@@ -20,8 +20,14 @@ struct TextUnderPictureCellViewModelOutput {
     let isCheckerHidden: Driver<Bool>
 }
 
-protocol TextUnderPictureCellViewModel: CellViewModel {
+protocol TextUnderPictureCellViewModel: ViewModel, Identifiable {
 
     var isCheckerSelected: BehaviorRelay<Bool> { get }
     func transform(input: TextUnderPictureCellViewModelInput) -> TextUnderPictureCellViewModelOutput
+}
+
+extension TextUnderPictureCellViewModel {
+    static var identifier: String {
+        return String(describing: type(of: TextUnderPictureCellViewModel.self))
+    }
 }
