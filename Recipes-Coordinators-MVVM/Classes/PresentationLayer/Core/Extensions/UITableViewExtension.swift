@@ -18,22 +18,20 @@ extension UITableView {
     typealias ConcreteCellConfigurable = UITableViewCell & CellConfigurable
     private typealias CellFactory = (UITableView, IndexPath, CellViewModel) -> UITableViewCell
 
-    func bind(viewModel: CellViewModel, at indexPath: IndexPath) -> UITableViewCell {
+    func bindCell(with viewModel: CellViewModel, at indexPath: IndexPath) -> UITableViewCell {
         return cellTypeMap[type(of: viewModel).identifier]?(self, indexPath, viewModel) ?? UITableViewCell()
     }
 
-    func registerConfigurable<VMC: ConcreteCellConfigurable>(cellType: VMC.Type) {
+    func registerConfigurable<CellConfigurable: ConcreteCellConfigurable>(cellType: CellConfigurable.Type) {
         let viewModelType = String(describing: type(of: cellType.DataType.self))
         register(cellType: cellType)
 
-        var map = cellTypeMap
-        map[viewModelType] = createCellFactory(cellType: cellType)
-        cellTypeMap = map
+        cellTypeMap.updateValue(createCellFactory(cellType: cellType), forKey: viewModelType)
     }
 
     func register<CellType: UITableViewCell>(cellType: CellType.Type) {
         register(UINib(nibName: cellType.className, bundle: .main),
-                 forCellReuseIdentifier: cellType.cellReuseIdentifier)
+                 forCellReuseIdentifier: cellType.reuseId)
     }
 
     private var cellTypeMap: [String: CellFactory] {
@@ -52,10 +50,15 @@ extension UITableView {
         }
     }
 
-    private func createCellFactory<VMC: ConcreteCellConfigurable>(cellType: VMC.Type) -> CellFactory {
+    private func createCellFactory<CellConfigurable: ConcreteCellConfigurable>(
+        cellType: CellConfigurable.Type
+        ) -> CellFactory {
         let cellFactory: CellFactory = { tableView, indexPath, cellViewModel in
-            let cell = tableView.dequeueReusableCell(withIdentifier: VMC.cellReuseIdentifier, for: indexPath) as! VMC
-            if let cellViewModel = cellViewModel as? VMC.DataType {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: CellConfigurable.reuseId,
+                for: indexPath
+                ) as! CellConfigurable
+            if let cellViewModel = cellViewModel as? CellConfigurable.DataType {
                 cell.configure(with: cellViewModel)
             }
             return cell

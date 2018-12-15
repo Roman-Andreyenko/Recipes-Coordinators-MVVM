@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-final class RecipeListViewController: UIViewController, ViewModelInitializable {
+final class RecipeListViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
 
@@ -30,12 +30,18 @@ final class RecipeListViewController: UIViewController, ViewModelInitializable {
 
         output.recipes.drive(tableView.rx.items) { tableView, index, cellViewModel in
             let indexPath = IndexPath(row: index, section: 0)
-            return tableView.bind(viewModel: cellViewModel, at: indexPath)
+            return tableView.bindCell(with: cellViewModel, at: indexPath)
         }.disposed(by: disposeBag)
         output.selectedRecipe
             .drive(onNext: { (cellViewModel) in
                 print("selected item: \(type(of: cellViewModel).identifier)")
             })
             .disposed(by: disposeBag)
+    }
+}
+
+extension RecipeListViewController: StoryboardBased {
+    static var storyboardName: String {
+        return AppStoryboard.recipes.name
     }
 }

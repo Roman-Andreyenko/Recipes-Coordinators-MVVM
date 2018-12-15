@@ -26,11 +26,11 @@ final class RecipeListCoordinator: BaseCoordinator<Void> {
 
     override func start() -> Observable<Void> {
         
-        let viewController = RecipeListViewController
-            .instantiate(from: .recipes,
-                         with: assembler.resolver.resolve(
-                            RecipeListViewModel.self,
-                             argument: DefaultRecipeListViewModelArgument(resolver: assembler.resolver)))
+        let viewController = RecipeListViewController.instantiate()
+        viewController.viewModel = assembler.resolver.resolve(
+            RecipeListViewModel.self,
+            argument: DefaultRecipeListViewModelArgument(resolver: assembler.resolver)
+        )
         let navigationController = UINavigationController(rootViewController: viewController)
 
         let rootWindow = assembler.resolver.resolve(UIWindow.self, name: DependencyNames.UIKit.rootWindow.rawValue)!
