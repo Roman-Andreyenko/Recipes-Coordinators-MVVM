@@ -15,21 +15,21 @@ struct AssociatedKeys {
 
 extension UITableView {
 
-    typealias ConcreteCellConfigurable = UITableViewCell & CellConfigurable
+    typealias BindableCell = UITableViewCell & Bindable
     private typealias CellFactory = (UITableView, IndexPath, IdentifiableViewModel) -> UITableViewCell
 
     func bindCell(with viewModel: IdentifiableViewModel, at indexPath: IndexPath) -> UITableViewCell {
         return cellTypeMap[type(of: viewModel).identifier]?(self, indexPath, viewModel) ?? UITableViewCell()
     }
 
-    func registerConfigurable<CellConfigurable: ConcreteCellConfigurable>(cellType: CellConfigurable.Type) {
+    func registerConfigurable<Cell: BindableCell>(cellType: Cell.Type) {
         let viewModelType = String(describing: type(of: cellType.DataType.self))
         register(cellType: cellType)
 
         cellTypeMap.updateValue(createCellFactory(cellType: cellType), forKey: viewModelType)
     }
 
-    func register<CellType: UITableViewCell>(cellType: CellType.Type) {
+    func register<Cell: UITableViewCell>(cellType: Cell.Type) {
         register(UINib(nibName: cellType.className, bundle: .main),
                  forCellReuseIdentifier: cellType.reuseId)
     }
@@ -50,16 +50,16 @@ extension UITableView {
         }
     }
 
-    private func createCellFactory<CellConfigurable: ConcreteCellConfigurable>(
-        cellType: CellConfigurable.Type
+    private func createCellFactory<Cell: BindableCell>(
+        cellType: Cell.Type
         ) -> CellFactory {
         let cellFactory: CellFactory = { tableView, indexPath, cellViewModel in
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: CellConfigurable.reuseId,
+                withIdentifier: Cell.reuseId,
                 for: indexPath
-                ) as! CellConfigurable
-            if let cellViewModel = cellViewModel as? CellConfigurable.DataType {
-                cell.configure(with: cellViewModel)
+                ) as! Cell
+            if let cellViewModel = cellViewModel as? Cell.DataType {
+                cell.bind(with: cellViewModel)
             }
             return cell
         }

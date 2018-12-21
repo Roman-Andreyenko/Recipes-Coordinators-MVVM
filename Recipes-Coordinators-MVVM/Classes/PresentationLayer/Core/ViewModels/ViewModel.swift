@@ -8,5 +8,5 @@
 
 typealias IdentifiableViewModel = ViewModel & Identifiable
 
-protocol ViewModel: class {
+protocol ViewModel {
 }

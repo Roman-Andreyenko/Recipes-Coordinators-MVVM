@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CellConfigurable {
+protocol Bindable {
     associatedtype DataType
-    func configure(with viewModel: DataType)
+    func bind(with: DataType)
 }

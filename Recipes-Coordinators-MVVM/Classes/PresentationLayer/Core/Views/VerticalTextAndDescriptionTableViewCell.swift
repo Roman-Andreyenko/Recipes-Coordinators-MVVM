@@ -16,9 +16,9 @@ class VerticalTextAndDescriptionTableViewCell: UITableViewCell {
 
 }
 
-extension VerticalTextAndDescriptionTableViewCell: CellConfigurable {
+extension VerticalTextAndDescriptionTableViewCell: Bindable {
     
-    func configure(with viewModel: VerticalTextAndDescriptionCellViewModel) {
+    func bind(with viewModel: VerticalTextAndDescriptionCellViewModel) {
         let output = viewModel.transform(input: VerticalTextAndDescriptionCellViewModelInput())
         [output.title.drive(titleView.rx.text),
          output.description.drive(descriptionView.rx.text)]

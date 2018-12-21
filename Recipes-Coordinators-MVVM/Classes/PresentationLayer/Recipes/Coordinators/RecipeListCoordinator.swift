@@ -13,6 +13,12 @@ import RxSwift
 final class RecipeListCoordinator: BaseCoordinator<Void> {
 
     private let assembler: Assembler
+    private lazy var viewModel: RecipeListViewModel = {
+        return assembler.resolver.resolve(
+            RecipeListViewModel.self,
+            argument: DefaultRecipeListViewModelArgument(resolver: assembler.resolver)
+            )!
+    }()
 
     init(parentAssembler: Assembler) {
         self.assembler = Assembler(
@@ -27,10 +33,7 @@ final class RecipeListCoordinator: BaseCoordinator<Void> {
     override func start() -> Observable<Void> {
         
         let viewController = RecipeListViewController.instantiate()
-        viewController.viewModel = assembler.resolver.resolve(
-            RecipeListViewModel.self,
-            argument: DefaultRecipeListViewModelArgument(resolver: assembler.resolver)
-        )
+        viewController.bind(with: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)
 
         let rootWindow = assembler.resolver.resolve(UIWindow.self, name: DependencyNames.UIKit.rootWindow.rawValue)!

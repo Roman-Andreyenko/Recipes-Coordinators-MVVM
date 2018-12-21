@@ -17,9 +17,9 @@ class TextUnderPictureTableViewCell: UITableViewCell {
     @IBOutlet private weak var checkerView: UIButton!
 }
 
-extension TextUnderPictureTableViewCell: CellConfigurable {
+extension TextUnderPictureTableViewCell: Bindable {
 
-    func configure(with viewModel: TextUnderPictureCellViewModel) {
+    func bind(with viewModel: TextUnderPictureCellViewModel) {
         let isCheckerSelected = checkerView.rx.tap.asDriver().map { [weak self] in
             return self?.checkerView.isSelected ?? false
         }

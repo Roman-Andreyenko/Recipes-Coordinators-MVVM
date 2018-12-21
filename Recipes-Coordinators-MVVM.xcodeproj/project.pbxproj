@@ -37,7 +37,7 @@
 		30BE8C202179CC7A0009D91B /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C1F2179CC7A0009D91B /* Identifiable.swift */; };
 		30BE8C222179CDC40009D91B /* TextUnderPictureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C212179CDC40009D91B /* TextUnderPictureCellViewModel.swift */; };
 		30BE8C242179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C232179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift */; };
-		30BE8C262179EEB70009D91B /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C252179EEB70009D91B /* CellConfigurable.swift */; };
+		30BE8C262179EEB70009D91B /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C252179EEB70009D91B /* Bindable.swift */; };
 		30BE8C282179F6DE0009D91B /* ReactiveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C272179F6DE0009D91B /* ReactiveExtension.swift */; };
 		30BE8C2A2179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE8C292179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift */; };
 		30BE8C2C2179FC7D0009D91B /* VerticalTextAndDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30BE8C2B2179FC7D0009D91B /* VerticalTextAndDescriptionTableViewCell.xib */; };
@@ -86,7 +86,7 @@
 		30BE8C1F2179CC7A0009D91B /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		30BE8C212179CDC40009D91B /* TextUnderPictureCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderPictureCellViewModel.swift; sourceTree = "<group>"; };
 		30BE8C232179EA900009D91B /* RecipeTextUnderPictureCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTextUnderPictureCellViewModel.swift; sourceTree = "<group>"; };
-		30BE8C252179EEB70009D91B /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		30BE8C252179EEB70009D91B /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		30BE8C272179F6DE0009D91B /* ReactiveExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveExtension.swift; sourceTree = "<group>"; };
 		30BE8C292179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTextAndDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		30BE8C2B2179FC7D0009D91B /* VerticalTextAndDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalTextAndDescriptionTableViewCell.xib; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 			children = (
 				3053C73B217916AD0041C485 /* TextUnderPictureTableViewCell.swift */,
 				3053C73D217916BB0041C485 /* TextUnderPictureTableViewCell.xib */,
-				30BE8C252179EEB70009D91B /* CellConfigurable.swift */,
+				30BE8C252179EEB70009D91B /* Bindable.swift */,
 				30BE8C292179FC710009D91B /* VerticalTextAndDescriptionTableViewCell.swift */,
 				30BE8C2B2179FC7D0009D91B /* VerticalTextAndDescriptionTableViewCell.xib */,
 			);
@@ -551,7 +551,7 @@
 				30EA490721C17457009AA63A /* Instantiatable.swift in Sources */,
 				3053C70A2178DF240041C485 /* AppDelegate.swift in Sources */,
 				3053C7232178F9550041C485 /* Coordinator.swift in Sources */,
-				30BE8C262179EEB70009D91B /* CellConfigurable.swift in Sources */,
+				30BE8C262179EEB70009D91B /* Bindable.swift in Sources */,
 				3053C72B21790A280041C485 /* AppStoryboard.swift in Sources */,
 				30A86CE421AAAD71005193DD /* VerticalTextAndDescriptionCellViewModelAssembly.swift in Sources */,
 				3053C73C217916AD0041C485 /* TextUnderPictureTableViewCell.swift in Sources */,

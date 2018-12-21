@@ -13,25 +13,38 @@ import RxSwift
 final class RecipeListViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
-
     @IBOutlet private weak var tableView: UITableView!
 
-    var viewModel: RecipeListViewModel!
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+extension RecipeListViewController: Bindable {
 
-        tableView.registerConfigurable(cellType: TextUnderPictureTableViewCell.self)
-        tableView.registerConfigurable(cellType: VerticalTextAndDescriptionTableViewCell.self)
+    func bind(with viewModel: RecipeListViewModel) {
+        rx.viewDidLoad
+            .subscribe(onNext: { [weak self] in
+                guard let `self` = self else { return }
+                self.configureView()
+                let input = self.configureInput()
+                let output = viewModel.transform(input: input)
+                self.bind(output: output)
+            }) 
+            .disposed(by: disposeBag)
+    }
 
-        let input = RecipeListViewModelInput(selectRecipeTrigger: tableView.rx.itemSelected.asDriver().map { $0.row })
+    private func configureView() {
+        self.tableView.registerConfigurable(cellType: TextUnderPictureTableViewCell.self)
+        self.tableView.registerConfigurable(cellType: VerticalTextAndDescriptionTableViewCell.self)
+    }
 
-        let output = viewModel.transform(input: input)
+    private func configureInput() -> RecipeListViewModelInput {
+        return RecipeListViewModelInput(selectRecipeTrigger: tableView.rx.itemSelected.asDriver().map { $0.row })
+    }
 
+    private func bind(output: RecipeListViewModelOutput) {
         output.recipes.drive(tableView.rx.items) { tableView, index, cellViewModel in
             let indexPath = IndexPath(row: index, section: 0)
             return tableView.bindCell(with: cellViewModel, at: indexPath)
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         output.selectedRecipe
             .drive(onNext: { (cellViewModel) in
                 print("selected item: \(type(of: cellViewModel).identifier)")
