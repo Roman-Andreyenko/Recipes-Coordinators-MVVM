@@ -9,6 +9,7 @@
 import UIKit
 import Swinject
 import RxSwift
+import RxCocoa
 
 final class RecipeListCoordinator: BaseCoordinator<Void> {
 
@@ -17,7 +18,7 @@ final class RecipeListCoordinator: BaseCoordinator<Void> {
         return assembler.resolver.resolve(
             RecipeListViewModel.self,
             argument: DefaultRecipeListViewModelArgument(resolver: assembler.resolver)
-            )!
+        )!
     }()
 
     init(parentAssembler: Assembler) {
@@ -30,7 +31,7 @@ final class RecipeListCoordinator: BaseCoordinator<Void> {
             parent: parentAssembler)
     }
 
-    override func start() -> Observable<Void> {
+    override func start() -> Signal<Void> {
         
         let viewController = RecipeListViewController.instantiate()
         viewController.bind(with: viewModel)
@@ -40,6 +41,17 @@ final class RecipeListCoordinator: BaseCoordinator<Void> {
         rootWindow.rootViewController = navigationController
         rootWindow.makeKeyAndVisible()
 
-        return Observable.never()
+        viewModel.isRecipeSelected
+            .flatMap { [weak self] _ -> Signal<Void> in
+                guard let `self` = self else { return .empty() }
+                return self.coordinate(to: RecipeListOfStepsListCoordinator(
+                    parentAssembler: self.assembler,
+                    navigationController: navigationController
+                ))
+            }
+            .emit()
+            .disposed(by: disposeBag)
+
+        return Signal.never()
     }
 }

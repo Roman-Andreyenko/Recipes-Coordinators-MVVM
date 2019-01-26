@@ -69,5 +69,51 @@
             </objects>
             <point key="canvasLocation" x="788" y="44"/>
         </scene>
+        <!--Recipe Step List View Controller-->
+        <scene sceneID="5Q3-Rg-6n7">
+            <objects>
+                <viewController storyboardIdentifier="RecipeStepListViewController" id="ujN-lc-aPL" customClass="RecipeStepListViewController" customModule="Recipes_Coordinators_MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nfY-bP-MFl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWN-gI-Meu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWQ-2O-r7A">
+                                        <rect key="frame" x="166" y="115" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="TWQ-2O-r7A" firstAttribute="centerY" secondItem="zWN-gI-Meu" secondAttribute="centerY" id="2Ts-Fj-lkn"/>
+                                    <constraint firstAttribute="width" constant="375" id="MQs-7S-dzX"/>
+                                    <constraint firstItem="TWQ-2O-r7A" firstAttribute="centerX" secondItem="zWN-gI-Meu" secondAttribute="centerX" id="owS-oW-pr3"/>
+                                    <constraint firstAttribute="height" constant="250" id="tvE-Rk-s5P"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Je-MF-FYP" firstAttribute="trailing" secondItem="zWN-gI-Meu" secondAttribute="trailing" id="E0I-QE-crE"/>
+                            <constraint firstItem="zWN-gI-Meu" firstAttribute="leading" secondItem="6Je-MF-FYP" secondAttribute="leading" id="L9B-4p-wcf"/>
+                            <constraint firstItem="zWN-gI-Meu" firstAttribute="top" secondItem="6Je-MF-FYP" secondAttribute="top" id="o8J-Lr-MVp"/>
+                            <constraint firstItem="6Je-MF-FYP" firstAttribute="bottom" secondItem="zWN-gI-Meu" secondAttribute="bottom" id="ox0-GB-2nI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Je-MF-FYP"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="250"/>
+                    <connections>
+                        <outlet property="stepsView" destination="TWQ-2O-r7A" id="svP-t6-a78"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5T1-il-UA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608" y="41"/>
+        </scene>
     </scenes>
 </document>

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Roman Andreyenko. All rights reserved.
 //
 
-import RxSwift
+import RxCocoa
 
 /// Coordinator generic over the return type of the `start` method.
 protocol Coordinator {
@@ -16,10 +16,10 @@ protocol Coordinator {
 
     /// - Parameter coordinator: Coordinator to start.
     /// - Returns: Result of coordinator's work.
-    func coordinate(to: Self) -> Observable<CoordinationResult>
+    func coordinate(to: Self) -> Signal<CoordinationResult>
 
     /// Starts job of the coordinator.
     ///
     /// - Returns: Result of coordinator's work.
-    func start() -> Observable<CoordinationResult>
+    func start() -> Signal<CoordinationResult>
 }

@@ -10,15 +10,16 @@ import RxCocoa
 import Swinject
 
 struct RecipeListViewModelInput {
-    let selectRecipeTrigger: Driver<Int>
+    let selectRecipeTrigger: Signal<Int>
 }
 
 struct RecipeListViewModelOutput {
-    let selectedRecipe: Driver<IdentifiableViewModel>
+    let selectedRecipe: Signal<IdentifiableViewModel>
     let recipes: Driver<[IdentifiableViewModel]>
 }
 
 protocol RecipeListViewModel: ViewModel {
 
+    var isRecipeSelected: Signal<Recipe> { get }
     func transform(input: RecipeListViewModelInput) -> RecipeListViewModelOutput
 }

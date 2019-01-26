@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 /// Base abstract coordinator generic over the return type of the `start` method.
 class BaseCoordinator<ResultType>: Coordinator {
@@ -47,13 +48,13 @@ class BaseCoordinator<ResultType>: Coordinator {
     ///
     /// - Parameter coordinator: Coordinator to start.
     /// - Returns: Result of `start()` method.
-    func coordinate(to coordinator: BaseCoordinator<ResultType>) -> Observable<ResultType> {
+    func coordinate(to coordinator: BaseCoordinator<ResultType>) -> Signal<ResultType> {
         store(coordinator: coordinator)
         return coordinator.start()
             .do(onNext: { [weak self] _ in self?.free(coordinator: coordinator) })
     }
 
-    func start() -> Observable<CoordinationResult> {
+    func start() -> Signal<CoordinationResult> {
         fatalError("Start method should be implemented.")
     }
 

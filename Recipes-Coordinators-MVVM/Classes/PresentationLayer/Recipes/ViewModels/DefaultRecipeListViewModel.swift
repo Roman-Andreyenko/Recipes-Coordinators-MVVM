@@ -12,6 +12,8 @@ import Swinject
 
 final class DefaultRecipeListViewModel: RecipeListViewModel {
 
+    let isRecipeSelected: Signal<Recipe>
+    private let _isRecipeSelected: PublishRelay<Recipe>
     private let recipes = [Recipe(name: "recipe1", description: "cullest recipe1", pictureUrl: nil, steps: nil),
                            Recipe(name: "recipe2", description: "cullest recipe2", pictureUrl: nil, steps: nil),
                            Recipe(name: "recipe3", description: "cullest recipe3", pictureUrl: nil, steps: nil),
@@ -22,6 +24,8 @@ final class DefaultRecipeListViewModel: RecipeListViewModel {
 
     init(argument: DefaultRecipeListViewModelArgument) {
         self.resolver = argument.resolver
+        self._isRecipeSelected = PublishRelay()
+        self.isRecipeSelected = _isRecipeSelected.asSignal()
     }
 
     func transform(input: RecipeListViewModelInput) -> RecipeListViewModelOutput {
@@ -54,11 +58,16 @@ final class DefaultRecipeListViewModel: RecipeListViewModel {
                 )!
             )
         }
-        let recipesModels = Driver.of(cellViewModels)
-        let selectedRecipe = input.selectRecipeTrigger.withLatestFrom(recipesModels) { index, recipes in
-            return recipes[index]
+        let recipesModels = BehaviorRelay(value: cellViewModels)
+        let selectedRecipe = input.selectRecipeTrigger.map { index in
+            return recipesModels.value[index]
         }
-        return RecipeListViewModelOutput(selectedRecipe: selectedRecipe, recipes: recipesModels)
+        input.selectRecipeTrigger.map { [recipes] index in
+                return recipes[index]
+            }
+            .emit(to: _isRecipeSelected)
+            .disposed(by: disposeBag)
+        return RecipeListViewModelOutput(selectedRecipe: selectedRecipe, recipes: recipesModels.asDriver())
     }
 }
 

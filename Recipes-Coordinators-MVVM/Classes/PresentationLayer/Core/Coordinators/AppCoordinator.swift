@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RxSwift
+import RxCocoa
 import Swinject
 
 class AppCoordinator: BaseCoordinator<Void> {
@@ -19,7 +19,7 @@ class AppCoordinator: BaseCoordinator<Void> {
         super.init()
     }
 
-    override func start() -> Observable<Void> {
+    override func start() -> Signal<Void> {
         let recipeListCoordinator = RecipeListCoordinator(parentAssembler: assembler)
         return coordinate(to: recipeListCoordinator)
     }

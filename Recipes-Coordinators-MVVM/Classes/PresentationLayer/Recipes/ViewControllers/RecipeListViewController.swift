@@ -37,16 +37,18 @@ extension RecipeListViewController: Bindable {
     }
 
     private func configureInput() -> RecipeListViewModelInput {
-        return RecipeListViewModelInput(selectRecipeTrigger: tableView.rx.itemSelected.asDriver().map { $0.row })
+        return RecipeListViewModelInput(selectRecipeTrigger: tableView.rx.itemSelected.asSignal().map { $0.row })
     }
 
     private func bind(output: RecipeListViewModelOutput) {
-        output.recipes.drive(tableView.rx.items) { tableView, index, cellViewModel in
-            let indexPath = IndexPath(row: index, section: 0)
-            return tableView.bindCell(with: cellViewModel, at: indexPath)
-            }.disposed(by: disposeBag)
+        output.recipes
+            .drive(tableView.rx.items) { tableView, index, cellViewModel in
+                let indexPath = IndexPath(row: index, section: 0)
+                return tableView.bindCell(with: cellViewModel, at: indexPath)
+            }
+            .disposed(by: disposeBag)
         output.selectedRecipe
-            .drive(onNext: { (cellViewModel) in
+            .emit(onNext: { (cellViewModel) in
                 print("selected item: \(type(of: cellViewModel).identifier)")
             })
             .disposed(by: disposeBag)
